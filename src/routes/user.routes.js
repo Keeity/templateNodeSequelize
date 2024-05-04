@@ -1,5 +1,5 @@
 const {Router, query} = require('express');
-const UserController = require('../controllers/UserController');
+const UserController = require('../controllers/userController');
 
 const userRoutes = new Router; 
 
@@ -7,10 +7,10 @@ const userRoutes = new Router;
 userRoutes.post('/', UserController.register)
 
 //listar users com possibilidade de filtro
-userRoutes.get('/', auth, UserController.listAll)
+userRoutes.get('/', auth, UserController.list)
 
 //filtrar user por id route params
-userRoutes.get('/:id', auth, UserController.listOne)
+userRoutes.get('/:id', auth, UserController.listById)
 
 //PUT - altera user por id
 userRoutes.put('/:id', auth, UserController.update)
