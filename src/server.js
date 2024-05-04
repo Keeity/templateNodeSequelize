@@ -1,4 +1,4 @@
-const express = require('express') //Framework da aplicação
+const express = require('express') 
 const cors = require('cors') // Biblioteca utilizada para inserir headers http
 const { connection } = require('./database/connection') // Configuração de acesso ao banco de dados
 const routes = require('./routes/routes')
@@ -6,12 +6,12 @@ const routes = require('./routes/routes')
 const PORT_API = process.env.PORT_API 
 
 class Server { //é criada uma classe, com um constructor
-  constructor (server = express())// Argumento do constructor auto iniciado da aplicação para usarmos as devidas funções do express
+  constructor (server = express())
   { 
-    this.middlewares(server) // Instância do argumento da função para a função middlewares
-    this.database()  // Instância da função database
-    server.use(routes)  //está dizendo para usar o que foi exportado
-    this.initializeServer(server) // Instância da função initializeServer
+    this.middlewares(server) 
+    this.database()  
+    server.use(routes) 
+    this.initializeServer(server) 
   }
 
   async middlewares(app) {
